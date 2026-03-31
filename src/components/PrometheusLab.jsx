@@ -113,49 +113,12 @@ export default function PrometheusLab() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
-            <div className="bg-dark-card border border-dark-border rounded-2xl overflow-hidden h-full min-h-[400px] flex flex-col">
-              {/* Top bar */}
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-dark-border">
-                <div className="w-2 h-2 rounded-full bg-accent/50" />
-                <div className="w-2 h-2 rounded-full bg-gold/50" />
-                <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                <span className="text-xs text-gray-600 ml-2">prometheus-lab v3.2.1</span>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 p-6 flex flex-col items-center justify-center text-center">
-                <div className="grid grid-cols-3 gap-3 mb-6 w-full max-w-xs">
-                  {[
-                    { label: 'Acc X', value: '9.81', color: 'text-accent' },
-                    { label: 'Acc Y', value: '0.02', color: 'text-gold' },
-                    { label: 'Acc Z', value: '0.15', color: 'text-green-400' },
-                    { label: 'Vel', value: '0.85', color: 'text-accent' },
-                    { label: 'Power', value: '412', color: 'text-gold' },
-                    { label: 'ROM', value: '38.2', color: 'text-green-400' },
-                  ].map((d) => (
-                    <div key={d.label} className="bg-dark/50 rounded-lg p-3">
-                      <p className="text-[10px] text-gray-600 uppercase">{d.label}</p>
-                      <p className={`text-lg font-mono font-bold ${d.color}`}>{d.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Mini chart */}
-                <div className="w-full max-w-xs flex items-end justify-center gap-0.5 h-16">
-                  {Array.from({ length: 24 }, (_, i) => (
-                    <div
-                      key={i}
-                      className="w-2 bg-accent/40 rounded-t"
-                      style={{
-                        height: `${20 + Math.sin(i * 0.5) * 30 + Math.random() * 20}%`,
-                      }}
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-gray-600 mt-3">
-                  Research Environment — Live Sensor Data
-                </p>
-              </div>
+            <div className="bg-dark-card border border-dark-border rounded-2xl overflow-hidden h-full min-h-[400px]">
+              <img
+                src="/prometheus-lab.png"
+                alt="Prometheus Lab — Load-Velocity Profiles, Velocity Trends, and Exercise Analytics"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
         </div>

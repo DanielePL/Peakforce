@@ -141,15 +141,11 @@ export default function Hero() {
             className="hidden lg:flex justify-center"
           >
             <div className="relative">
-              <div className="w-[280px] h-[560px] bg-dark-card border-2 border-dark-border rounded-[3rem] p-3 shadow-2xl shadow-accent/10">
-                <div className="w-full h-full bg-dark-light rounded-[2.25rem] flex flex-col items-center justify-center overflow-hidden">
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent to-gold rounded-2xl flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-dark">P</span>
-                  </div>
-                  <p className="text-sm text-gray-500 font-medium">Prometheus App</p>
-                  <p className="text-xs text-gray-600 mt-1">Screenshot Coming Soon</p>
-                </div>
-              </div>
+              <img
+                src="/app-training.png"
+                alt="Prometheus Athlete App — Training Dashboard"
+                className="w-[280px] drop-shadow-2xl"
+              />
               {/* Floating badges */}
               <div className="absolute -left-16 top-20 px-3 py-2 bg-dark-card/90 backdrop-blur border border-dark-border rounded-xl text-xs animate-[float_3s_ease-in-out_infinite]">
                 <span className="text-accent font-semibold">AI Coach</span>

@@ -6,7 +6,6 @@ import {
   Monitor,
   Building2,
   Eye,
-  Cpu,
   Utensils,
   TrendingUp,
   Users,
@@ -14,9 +13,6 @@ import {
   Bot,
   CalendarDays,
   LayoutDashboard,
-  ScanLine,
-  Gauge,
-  Wifi,
 } from 'lucide-react'
 
 const tabs = [
@@ -33,7 +29,11 @@ const tabs = [
       { icon: TrendingUp, text: 'Progressive overload planning' },
     ],
     mockup: 'phone',
-    screens: ['Training Dashboard', 'VBT Analysis', 'Nutrition Tracker'],
+    images: [
+      { src: '/app-nutrition.png', alt: 'Nutrition Tracking' },
+      { src: '/app-training.png', alt: 'Training Dashboard' },
+      { src: '/app-mealplans.png', alt: 'AI Meal Plans' },
+    ],
   },
   {
     id: 'coach',
@@ -46,7 +46,11 @@ const tabs = [
       { icon: BarChart3, text: 'Progress analytics & reporting' },
       { icon: Bot, text: 'AI-assisted programming suggestions' },
     ],
-    mockup: 'laptop',
+    mockup: 'desktop',
+    images: [
+      { src: '/coach-dashboard.png', alt: 'Coach Dashboard — AI Briefing, Calendar & Action Items' },
+      { src: '/coach-client.png', alt: 'Client Profile — Training, Analytics & Workout Management' },
+    ],
   },
   {
     id: 'enterprise',
@@ -60,89 +64,83 @@ const tabs = [
       { icon: CalendarDays, text: 'Group course organization' },
       { icon: Bot, text: 'Full CRM with analytics and AI assistants' },
     ],
-    mockup: 'laptop',
-  },
-  {
-    id: 'vbt',
-    label: 'VBT Engine',
-    icon: Eye,
-    title: 'Prometheus VBT Engine',
-    description: 'Science-grade velocity tracking powered by computer vision — no hardware needed.',
-    features: [
-      { icon: ScanLine, text: 'Real-time computer vision barbell tracking' },
-      { icon: Cpu, text: 'YOLO object detection + MediaPipe integration' },
-      { icon: Gauge, text: '0.99 confidence rating, 7 FPS on mobile CPU-only' },
-      { icon: Wifi, text: 'No external hardware needed — just your phone camera' },
+    mockup: 'desktop',
+    images: [
+      { src: '/enterprise-command.png', alt: 'Command Center — Sessions, Members & Alerts' },
+      { src: '/enterprise-analytics.png', alt: 'Analytics & Reports — Retention, Revenue & Insights' },
     ],
-    mockup: 'analysis',
   },
 ]
 
-function PhoneMockup({ screens }) {
+function PhoneMockup({ images }) {
   return (
-    <div className="flex gap-4 justify-center items-end">
-      {screens.map((screen, i) => (
+    <div className="flex gap-3 sm:gap-5 justify-center items-end px-4">
+      {images.map((img, i) => (
         <div
-          key={screen}
-          className={`bg-dark border border-dark-border rounded-2xl overflow-hidden shadow-xl ${
-            i === 1 ? 'w-44 h-80 -mt-4' : 'w-36 h-72 opacity-75 hidden sm:block'
+          key={img.alt}
+          className={`transition-all duration-300 ${
+            i === 1
+              ? 'w-40 sm:w-48 z-10 drop-shadow-2xl'
+              : 'w-32 sm:w-40 opacity-80 hidden sm:block drop-shadow-xl'
           }`}
         >
-          <div className="h-6 bg-dark-card border-b border-dark-border" />
-          <div className="flex flex-col items-center justify-center h-full p-4">
-            <div className="w-10 h-10 bg-accent/10 rounded-xl mb-3 flex items-center justify-center">
-              <Smartphone size={20} className="text-accent" />
-            </div>
-            <p className="text-xs text-gray-500 text-center">{screen}</p>
-          </div>
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="w-full h-auto rounded-[1.5rem]"
+          />
+          <p className="text-[10px] text-gray-500 text-center mt-2 font-medium">{img.alt}</p>
         </div>
       ))}
     </div>
   )
 }
 
-function LaptopMockup({ title }) {
+function DesktopMockup({ images }) {
+  const [activeImage, setActiveImage] = useState(0)
+
   return (
-    <div className="bg-dark border border-dark-border rounded-xl overflow-hidden shadow-xl max-w-lg mx-auto">
-      <div className="flex items-center gap-1.5 px-4 py-2.5 bg-dark-card border-b border-dark-border">
-        <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-        <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-        <div className="flex-1 mx-8">
-          <div className="h-5 bg-dark rounded-md" />
+    <div className="space-y-4">
+      {/* Browser chrome */}
+      <div className="bg-dark border border-dark-border rounded-xl overflow-hidden shadow-2xl">
+        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-dark-card border-b border-dark-border">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+          <div className="flex-1 mx-8">
+            <div className="h-5 bg-dark rounded-md flex items-center justify-center">
+              <span className="text-[10px] text-gray-600">prometheus.coach</span>
+            </div>
+          </div>
         </div>
+        <img
+          src={images[activeImage].src}
+          alt={images[activeImage].alt}
+          className="w-full h-auto"
+        />
       </div>
-      <div className="p-8 flex flex-col items-center justify-center h-48">
-        <Monitor size={32} className="text-accent/40 mb-3" />
-        <p className="text-sm text-gray-500">{title} Dashboard</p>
-        <p className="text-xs text-gray-600 mt-1">Screenshot Coming Soon</p>
-      </div>
+      {/* Image switcher */}
+      {images.length > 1 && (
+        <div className="flex justify-center gap-2">
+          {images.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveImage(i)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
+                activeImage === i
+                  ? 'bg-accent text-white'
+                  : 'bg-dark-card text-gray-400 hover:text-white border border-dark-border'
+              }`}
+            >
+              {img.alt.split('—')[0].trim()}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
 
-function AnalysisMockup() {
-  return (
-    <div className="bg-dark border border-dark-border rounded-xl overflow-hidden shadow-xl max-w-lg mx-auto">
-      <div className="p-6 flex flex-col items-center justify-center h-52">
-        <div className="w-full flex items-end justify-center gap-1 h-24 mb-4">
-          {[40, 65, 55, 80, 70, 90, 75, 85].map((h, i) => (
-            <div
-              key={i}
-              className="w-6 bg-gradient-to-t from-accent to-accent-light rounded-t opacity-60"
-              style={{ height: `${h}%` }}
-            />
-          ))}
-        </div>
-        <div className="flex items-center gap-2 mb-2">
-          <Eye size={16} className="text-gold" />
-          <span className="text-sm font-semibold text-gold">0.99 Confidence</span>
-        </div>
-        <p className="text-xs text-gray-500">VBT Analysis Visualization</p>
-      </div>
-    </div>
-  )
-}
 
 export default function ProductShowcase() {
   const [activeTab, setActiveTab] = useState('athlete')
@@ -230,9 +228,8 @@ export default function ProductShowcase() {
 
             {/* Mockup */}
             <div className="flex justify-center">
-              {active.mockup === 'phone' && <PhoneMockup screens={active.screens} />}
-              {active.mockup === 'laptop' && <LaptopMockup title={active.title} />}
-              {active.mockup === 'analysis' && <AnalysisMockup />}
+              {active.mockup === 'phone' && <PhoneMockup images={active.images} />}
+              {active.mockup === 'desktop' && <DesktopMockup images={active.images} />}
             </div>
           </motion.div>
         </AnimatePresence>
