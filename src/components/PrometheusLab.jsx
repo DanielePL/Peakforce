@@ -24,7 +24,7 @@ export default function PrometheusLab() {
   const [ref, isVisible] = useScrollAnimation(0.1)
 
   return (
-    <section id="lab" ref={ref} className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="lab" ref={ref} className="py-16 lg:py-20 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg className="w-full h-full">

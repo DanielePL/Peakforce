@@ -16,25 +16,25 @@ const milestones = [
   },
   {
     year: '2024',
-    title: 'Prometheus R&D & Development',
+    title: 'Prometheus R&D & Coach Mobile Apps',
     done: true,
   },
   {
     year: '2025',
-    title: 'Public Launch — Athlete App & Coach Software',
+    title: 'Prometheus Public Launch & LED Pro Studio Release',
     current: true,
   },
   {
-    year: '2025 H2',
-    title: 'Enterprise Launch & Clinic/Gym Partnerships',
+    year: '2026',
+    title: 'Prometheus Campus Launch & Enterprise Expansion',
   },
   {
-    year: '2026',
-    title: 'Wearable Integration & Global Expansion',
+    year: '2026 H2',
+    title: 'Wearable Integration & Certified Coach Trainings',
   },
   {
     year: '2027',
-    title: 'Clinical Validation Studies & Medical Partnerships',
+    title: 'Clinical Validation & New Software Verticals',
   },
 ]
 
@@ -42,11 +42,11 @@ export default function Roadmap() {
   const [ref, isVisible] = useScrollAnimation(0.1)
 
   return (
-    <section id="roadmap" ref={ref} className="py-24 lg:py-32 bg-dark-light/20 relative">
+    <section id="roadmap" ref={ref} className="py-16 lg:py-20 bg-dark-light/20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-10 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >

@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Beaker, MapPin, GraduationCap, Smartphone, Monitor, Building2 } from 'lucide-react'
+import { Shield, Beaker, GraduationCap, Code2, ArrowRight, Mail } from 'lucide-react'
 
 const trustItems = [
-  { icon: Beaker, label: 'Swiss Science' },
-  { icon: MapPin, label: 'Estonian Innovation' },
+  { icon: Code2, label: 'Swiss-Made Software' },
+  { icon: Beaker, label: 'Sport-Science Driven' },
   { icon: Shield, label: 'EU GDPR Compliant' },
-  { icon: GraduationCap, label: 'PhD-Driven R&D' },
+  { icon: GraduationCap, label: 'PhD-Level R&D' },
 ]
 
 export default function Hero() {
@@ -90,45 +90,35 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-medium mb-6">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-              Prometheus Ecosystem — Now in Beta
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
-              The Future of{' '}
+              We Build{' '}
               <span className="bg-gradient-to-r from-accent via-accent-light to-gold bg-clip-text text-transparent">
-                Intelligent Training
-              </span>
+                Software
+              </span>{' '}
+              That Moves People.
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed mb-8 max-w-xl">
-              Prometheus combines AI coaching, velocity-based training, and sports science into one
-              powerful ecosystem — built by scientists and world-class athletes.
+              PeakForce is a Swiss software manufacturer for the sport, health and performance
+              industry. We build production-grade platforms — from intelligent training systems to
+              connected gym infrastructure — for our own brands and as a development partner.
             </p>
 
-            {/* Three clear CTAs for three customer types */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://prometheus.coach/app"
+                href="#portfolio"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' }) }}
                 className="group px-6 py-4 bg-gold hover:bg-gold-light text-dark font-bold rounded-xl text-sm transition-all duration-200 hover:shadow-xl hover:shadow-gold/20 hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
-                <Smartphone size={18} />
-                Get the App
+                See Our Software
+                <ArrowRight size={16} />
               </a>
               <a
-                href="https://prometheus.coach"
-                className="group px-6 py-4 bg-accent hover:bg-accent-light text-white font-bold rounded-xl text-sm transition-all duration-200 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-0.5 flex items-center justify-center gap-2"
-              >
-                <Monitor size={18} />
-                For Coaches
-              </a>
-              <a
-                href="https://prometheus.coach/enterprise"
+                href="mailto:management@prometheus.coach"
                 className="group px-6 py-4 border border-gray-600 hover:border-accent text-white font-semibold rounded-xl text-sm transition-all duration-200 hover:bg-accent/5 flex items-center justify-center gap-2"
               >
-                <Building2 size={18} />
-                For Gyms & Clinics
+                <Mail size={18} />
+                Talk to Us
               </a>
             </div>
           </motion.div>
@@ -148,7 +138,7 @@ export default function Hero() {
               />
               {/* Floating badges */}
               <div className="absolute -left-16 top-20 px-3 py-2 bg-dark-card/90 backdrop-blur border border-dark-border rounded-xl text-xs animate-[float_3s_ease-in-out_infinite]">
-                <span className="text-accent font-semibold">AI Coach</span>
+                <span className="text-accent font-semibold">Coach</span>
                 <span className="text-gray-500 ml-1">Active</span>
               </div>
               <div className="absolute -right-12 top-40 px-3 py-2 bg-dark-card/90 backdrop-blur border border-dark-border rounded-xl text-xs animate-[float_3s_ease-in-out_infinite_1s]">

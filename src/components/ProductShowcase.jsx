@@ -21,9 +21,9 @@ const tabs = [
     label: 'Athlete App',
     icon: Smartphone,
     title: 'Prometheus Athlete App',
-    description: 'Your AI-powered training companion that learns, adapts, and evolves with every rep.',
+    description: 'Your training companion that learns, adapts, and evolves with every rep.',
     features: [
-      { icon: Bot, text: 'AI coaching & periodization' },
+      { icon: Bot, text: 'Adaptive coaching & periodization' },
       { icon: Eye, text: 'Real-time VBT barbell velocity analysis via phone camera' },
       { icon: Utensils, text: 'Nutrition tracking with 4.5M food database' },
       { icon: TrendingUp, text: 'Progressive overload planning' },
@@ -40,11 +40,13 @@ const tabs = [
     label: 'Coach Software',
     icon: Monitor,
     title: 'Prometheus Coach Software',
-    description: 'Professional-grade tools to manage, program, and analyze your athletes.',
+    description:
+      'Professional-grade tools to manage, program, and analyze your athletes — on the web, with full-feature companion apps for iOS and Android included free with every subscription.',
     features: [
       { icon: Users, text: 'Client management & program design' },
       { icon: BarChart3, text: 'Progress analytics & reporting' },
-      { icon: Bot, text: 'AI-assisted programming suggestions' },
+      { icon: Bot, text: 'Intelligent programming suggestions' },
+      { icon: Smartphone, text: 'iOS & Android companion apps — full feature scope, no lite versions' },
     ],
     mockup: 'desktop',
     images: [
@@ -62,7 +64,7 @@ const tabs = [
       { icon: LayoutDashboard, text: 'Managed coaching software & member CRM' },
       { icon: Smartphone, text: 'Studio entry management via phone' },
       { icon: CalendarDays, text: 'Group course organization' },
-      { icon: Bot, text: 'Full CRM with analytics and AI assistants' },
+      { icon: Bot, text: 'Full CRM with analytics and smart assistants' },
     ],
     mockup: 'desktop',
     images: [
@@ -148,22 +150,26 @@ export default function ProductShowcase() {
   const active = tabs.find((t) => t.id === activeTab)
 
   return (
-    <section id="product" ref={ref} className="py-24 lg:py-32 relative">
+    <section id="product" ref={ref} className="py-16 lg:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-10 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
-            The Prometheus{' '}
+          <span className="text-accent text-sm font-semibold uppercase tracking-widest">
+            Inside Prometheus
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 mb-4">
+            One Ecosystem.{' '}
             <span className="bg-gradient-to-r from-accent to-gold bg-clip-text text-transparent">
-              Ecosystem
+              Three Surfaces.
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Every tool a serious athlete and health professional needs. One platform.
+            Athlete app, coach software with mobile companions, and an enterprise platform for gyms
+            and clinics — every tool a serious athlete or health professional needs.
           </p>
         </div>
 

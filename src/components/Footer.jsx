@@ -1,20 +1,21 @@
 import { Instagram, Linkedin, Youtube, Twitter } from 'lucide-react'
 
 const pageLinks = [
-  { label: 'Product', href: '#product' },
+  { label: 'Software', href: '#portfolio' },
+  { label: 'Inside Prometheus', href: '#product' },
   { label: 'Science', href: '#lab' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Technology', href: '#technology' },
   { label: 'Team', href: '#team' },
-  { label: 'Roadmap', href: '#roadmap' },
 ]
 
-const prometheusLinks = [
+const softwareLinks = [
+  { label: 'Prometheus', href: 'https://prometheus.coach' },
   { label: 'Athlete App', href: 'https://prometheus.coach/app' },
   { label: 'Coach Software', href: 'https://prometheus.coach' },
-  { label: 'Enterprise', href: 'https://prometheus.coach/enterprise' },
-  { label: 'Pricing', href: 'https://prometheus.coach/pricing' },
-  { label: 'Demo', href: 'https://prometheus.coach/demo' },
+  { label: 'Prometheus Enterprise', href: 'https://prometheus.coach/enterprise' },
+  { label: 'LED Pro Studio', href: 'https://www.ledpro.solutions/' },
+  { label: 'Prometheus Campus — Coming Soon', href: 'mailto:hello@peakforce-solutions.com?subject=Prometheus%20Campus%20-%20Notify%20Me' },
 ]
 
 const socials = [
@@ -53,8 +54,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-500 mb-6 max-w-sm">
-              Where Science Meets Strength. Building the Prometheus AI-powered fitness and health
-              ecosystem — by scientists and world-class athletes.
+              Swiss software studio for sport, health and performance. Builders of the Prometheus
+              ecosystem, LED Pro Studio and Prometheus Campus — by scientists and world-class
+              athletes.
             </p>
 
             {/* Social */}
@@ -90,11 +92,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Prometheus Links */}
+          {/* Software Portfolio */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Prometheus</h4>
+            <h4 className="text-sm font-semibold text-white mb-4">Software</h4>
             <ul className="space-y-2">
-              {prometheusLinks.map((link) => (
+              {softwareLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -139,15 +141,17 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-gray-600">
-              © 2025 PeakForce OÜ — Tallinn, Estonia
+              © 2025 PeakForce — Swiss software for sport, health & performance
             </p>
             <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-dark-card border border-dark-border rounded-full">
+                <span className="text-xs">🇨🇭</span>
+                <span className="text-[10px] text-gray-500 font-medium">Made in Switzerland</span>
+              </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 bg-dark-card border border-dark-border rounded-full">
                 <span className="text-xs">🇪🇺</span>
                 <span className="text-[10px] text-gray-500 font-medium">GDPR Compliant</span>
               </div>
-              <span className="text-xs">🇨🇭</span>
-              <span className="text-xs">🇪🇪</span>
             </div>
           </div>
         </div>

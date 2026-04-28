@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Product', href: '#product' },
+  { label: 'Software', href: '#portfolio' },
+  { label: 'Prometheus', href: '#product' },
   { label: 'Science', href: '#lab' },
   { label: 'Solutions', href: '#solutions' },
-  { label: 'Technology', href: '#technology' },
   { label: 'Team', href: '#team' },
-  { label: 'Roadmap', href: '#roadmap' },
 ]
 
 export default function Navbar() {
@@ -65,10 +64,10 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden lg:block">
             <a
-              href="https://prometheus.coach"
+              href="mailto:hello@peakforce-solutions.com"
               className="px-5 py-2.5 bg-gold hover:bg-gold-light text-dark font-semibold text-sm rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold/20"
             >
-              Explore Prometheus
+              Get in Touch
             </a>
           </div>
 
@@ -100,10 +99,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://prometheus.coach"
+            href="mailto:hello@peakforce-solutions.com"
             className="block mx-4 mt-4 px-5 py-2.5 bg-gold hover:bg-gold-light text-dark font-semibold text-sm rounded-lg text-center transition-all"
           >
-            Explore Prometheus
+            Get in Touch
           </a>
         </div>
       </div>

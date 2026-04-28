@@ -10,7 +10,7 @@ const testimonials = [
     color: 'from-accent to-blue-400',
   },
   {
-    quote: "As a coach managing 30+ athletes, the AI-assisted programming saves me hours every week. It's like having a research assistant built into my workflow.",
+    quote: "As a coach managing 30+ athletes, the intelligent programming suggestions save me hours every week. It's like having a research assistant built into my workflow.",
     name: 'Beta Tester',
     role: 'Strength & Conditioning Coach',
     initials: 'SC',
@@ -29,11 +29,11 @@ export default function Testimonials() {
   const [ref, isVisible] = useScrollAnimation(0.1)
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 relative">
+    <section ref={ref} className="py-16 lg:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-10 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >

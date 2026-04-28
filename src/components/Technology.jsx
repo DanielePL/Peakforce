@@ -9,7 +9,7 @@ const features = [
   },
   {
     icon: Brain,
-    title: 'AI Coaching Engine',
+    title: 'Adaptive Coaching Engine',
     desc: 'Personalized programming that adapts to your progress',
   },
   {
@@ -28,7 +28,7 @@ export default function Technology() {
   const [ref, isVisible] = useScrollAnimation(0.1)
 
   return (
-    <section id="technology" ref={ref} className="py-24 lg:py-32 bg-dark-light/20 relative overflow-hidden">
+    <section id="technology" ref={ref} className="py-16 lg:py-20 bg-dark-light/20 relative overflow-hidden">
       {/* Circuit pattern background */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg className="w-full h-full">
@@ -45,7 +45,7 @@ export default function Technology() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-10 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >

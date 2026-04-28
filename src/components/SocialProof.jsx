@@ -1,11 +1,11 @@
 import { useScrollAnimation, useCountUp } from '../hooks/useScrollAnimation'
 
 const stats = [
-  { end: 180, suffix: '+', label: 'Beta Athletes' },
-  { end: 800, suffix: '+', label: 'Exercises' },
-  { end: 4.5, suffix: 'M+', label: 'Foods Database', decimal: true },
-  { label: 'AI-Powered VBT Analysis', text: true },
-  { label: 'Since 2010', text: true },
+  { label: 'Building Sport-Tech Since 2010', text: true },
+  { end: 3, suffix: '', label: 'Production Platforms' },
+  { end: 8, suffix: '+', label: 'Apps & Surfaces' },
+  { label: 'AI · Computer Vision · IoT', text: true },
+  { label: 'DE · EN · FR · IT · PL', text: true },
 ]
 
 function StatItem({ stat, isVisible }) {
