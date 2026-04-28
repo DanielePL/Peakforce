@@ -6,7 +6,6 @@ import PrometheusLab from './components/PrometheusLab'
 import Chameleon from './components/Chameleon'
 import Technology from './components/Technology'
 import Team from './components/Team'
-import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
       <Chameleon />
       <Technology />
       <Team />
-      <Testimonials />
       <Footer />
     </div>
   )
