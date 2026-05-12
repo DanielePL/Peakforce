@@ -44,10 +44,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li>
                 <a
-                  href="mailto:contact@peakforce.com"
+                  href="mailto:hello@peakforce.com"
                   className="hover:text-primary-foreground"
                 >
-                  contact@peakforce.com
+                  hello@peakforce.com
                 </a>
               </li>
               <li>Zürich, Switzerland</li>

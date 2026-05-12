@@ -27,7 +27,7 @@ export default function Contact() {
           strategic partnership.
         </p>
         <a
-          href="mailto:contact@peakforce.com"
+          href="mailto:hello@peakforce.com"
           className="group mt-10 inline-flex items-center gap-2 rounded-full bg-background text-foreground px-7 py-4 text-sm font-medium hover:bg-background/90 transition-all hover:gap-3"
         >
           Get in Touch
