@@ -1,148 +1,100 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
-
-const coreTeam = [
+const MEMBERS = [
   {
-    photo: '/team/daniele-pauli.png',
     name: 'Daniele Pauli',
-    title: 'CEO & Founder',
-    bio: 'IPF World Champion (2018) who has worked every layer of the fitness industry — from gym reception to leading gym teams, thousands of hours on the training floor, certified examiner for fitness professionals (Eidg. Fachausweis), and former Training Officer for Credit Suisse Health Management. 14,000+ coaching sessions across Olympic athletes and Swiss bank executives. Started building fitness CRM systems in 2010 and developed the world\'s first 9-axis bar acceleration VBT prototype in 2017 — combining deep operational knowledge of the fitness industry with software engineering.',
-    color: 'from-accent to-blue-400',
+    role: 'CEO & Founder',
+    image: '/lovable/team-daniele-BLXKUkZa.webp',
+    bio: "IPF World Champion (2018). Former Training Officer, Credit Suisse Health Management. 14,000+ coaching sessions. Developed the world's first 9-axis bar acceleration VBT prototype in 2017.",
+    tags: ['IPF World Champion', 'VBT Pioneer'],
   },
   {
-    photo: '/team/basil-achermann.png',
     name: 'Dr. Basil Achermann',
-    title: 'Chief Science Officer',
-    bio: 'Holds a PhD in Sport Science from the University of Zurich, specializing in measurement methodology for acceleration-based training. Combines a 4-year IT apprenticeship with deep academic research, making him the rare scientist who can both design the experiment and write the code. Leads the Prometheus Lab and drives our R&D pipeline.',
-    color: 'from-green-400 to-emerald-500',
+    role: 'Chief Science Officer',
+    image: '/lovable/team-basil-DdeTDupP.webp',
+    bio: 'PhD Sport Science, University of Zurich. The rare scientist who can both design the experiment and write the code. Leads the Prometheus Lab and drives the R&D pipeline.',
+    tags: ['PhD Sport Science', 'Measurement Methodology'],
   },
   {
-    photo: '/team/sjoerd-joosten.png',
     name: 'Sjoerd Joosten',
-    title: 'Chief Operating Officer',
-    bio: 'Sport psychologist by training, hybrid athlete by nature — carrying a golf handicap of 7 alongside serious numbers in weightlifting and WOD training. Brings extensive experience leading talent sport schools and training high-level athletes. As COO and B2B specialist, Sjoerd is the powerhouse driving PeakForce software into gyms, clinics, and enterprises across Europe.',
-    color: 'from-gold to-orange-400',
+    role: 'Chief Operating Officer',
+    image: '/lovable/team-sjoerd-BU1G6MS9.webp',
+    bio: 'Sport psychologist. Extensive experience leading talent sport schools. B2B specialist driving PeakForce into gyms, clinics and enterprises across Europe.',
+    tags: ['Sport Psychology', 'Enterprise Growth'],
   },
-]
-
-const team = [
   {
-    photo: '/team/karin-kaenel.png',
     name: 'Karin Känel',
-    title: 'Executive Assistant & Project Manager',
-    bio: 'Trained Polymechanikerin (EFZ) and former constructor at Bruker BioSpin — a global leader in scientific measurement instruments including NMR spectrometers. Certified Technische Kauffrau, combining precision engineering discipline with business acumen. Keeps PeakForce running with Swiss clockwork efficiency.',
-    color: 'from-purple-400 to-violet-500',
+    role: 'Executive Assistant & PM',
+    image: '/lovable/team-karin-CvIBcsd_.webp',
+    bio: 'Former constructor at Bruker BioSpin — global leader in NMR spectrometers. Certified Technische Kauffrau. Swiss clockwork efficiency.',
+    tags: ['Bruker BioSpin', 'Precision Engineering'],
   },
-]
-
-const advisors = [
   {
-    photo: '/team/sascha-tarone.png',
     name: 'Sascha Tarone',
-    title: 'Advisor & Early Investor',
-    bio: 'Versatile entrepreneur with 20 years of experience in financial analytics. As both strategic consultant and early investor, Sascha brings the financial rigor and market perspective that shapes PeakForce from business model to exit strategy.',
-    color: 'from-cyan-400 to-teal-500',
-    badge: true,
+    role: 'Advisor & Early Investor',
+    image: '/lovable/team-sascha-9mDApBbm.webp',
+    bio: '20 years in financial analytics. Shapes PeakForce from business model to exit strategy.',
+    tags: ['Financial Analytics', 'Strategic Advisory'],
   },
   {
-    photo: '/team/kevin-uram.png',
     name: 'Dr. Kevin Uram',
-    title: 'Early Investor & Technical Advisor',
-    bio: 'PhD in Physical Chemistry (University of Pittsburgh), former IBM Senior Technical Staff Member (12+ years), and Managing Director at Lumileds semiconductor manufacturing (11+ years). Holds multiple US patents in semiconductor fabrication technology. A veteran of precision engineering who recognized PeakForce as the next frontier of applied science.',
-    color: 'from-rose-400 to-pink-500',
-    badge: true,
+    role: 'Early Investor & Technical Advisor',
+    image: '/lovable/team-kevin-C0fI8Aqs.webp',
+    bio: 'PhD Physical Chemistry, University of Pittsburgh. Former IBM Senior Technical Staff Member. Managing Director, Lumileds. Multiple US patents.',
+    tags: ['IBM', 'Lumileds', 'US Patents'],
   },
 ]
-
-function TeamCard({ member, large }) {
-  return (
-    <div className={`group bg-dark-card border border-dark-border rounded-2xl p-6 transition-all duration-300 hover:border-accent/20 hover:shadow-lg hover:shadow-accent/5 relative ${large ? 'lg:p-8' : ''}`}>
-      {/* Accent line */}
-      <div className={`absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r ${member.color} rounded-b opacity-50 group-hover:opacity-100 transition-opacity`} />
-
-      {/* Badge */}
-      {member.badge && (
-        <div className="absolute top-4 right-4 px-2.5 py-1 bg-gold/10 border border-gold/20 rounded-full">
-          <span className="text-[10px] text-gold font-semibold uppercase tracking-wider">Advisor & Investor</span>
-        </div>
-      )}
-
-      {/* Avatar */}
-      <div className={`relative rounded-full overflow-hidden mb-4 ${large ? 'w-20 h-20' : 'w-16 h-16'}`}>
-        <div className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-40`} />
-        <img
-          src={member.photo}
-          alt={member.name}
-          className="relative w-full h-full object-cover"
-        />
-      </div>
-
-      <h3 className={`font-bold text-white ${large ? 'text-xl' : 'text-lg'}`}>{member.name}</h3>
-      <p className="text-accent text-sm font-medium mb-3">{member.title}</p>
-      <p className={`text-gray-400 leading-relaxed ${large ? 'text-sm' : 'text-xs'}`}>{member.bio}</p>
-    </div>
-  )
-}
 
 export default function Team() {
-  const [ref, isVisible] = useScrollAnimation(0.1)
-
   return (
-    <section id="team" ref={ref} className="py-16 lg:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div
-          className={`text-center mb-10 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <span className="text-accent text-sm font-semibold uppercase tracking-widest">
-            The Studio Behind the Software
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 mb-4">
-            Built by Scientists.{' '}
-            <span className="bg-gradient-to-r from-accent to-gold bg-clip-text text-transparent">
-              Driven by Athletes.
-            </span>
+    <section id="team" data-nav-theme="dark" className="bg-secondary">
+      <div className="container-edge pt-16 md:pt-20 pb-28 md:pb-36">
+        <div className="max-w-3xl">
+          <p className="eyebrow mb-5">The Studio Behind the Software</p>
+          <h2
+            className="font-serif leading-[1.08] tracking-tight text-foreground text-balance"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}
+          >
+            Built by Scientists. <span className="italic">Driven by Athletes.</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="mt-7 text-base md:text-lg text-muted-foreground leading-relaxed">
             The PeakForce core team — sport science, precision engineering and elite athletic
-            performance under one roof. Backed by a growing crew of developers and contributors
-            across our products.
+            performance under one roof. Swiss-founded. Globally minded.
           </p>
         </div>
 
-        {/* Core Team */}
-        <div
-          className={`grid md:grid-cols-3 gap-6 mb-6 transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {coreTeam.map((m) => (
-            <TeamCard key={m.name} member={m} large />
-          ))}
-        </div>
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {MEMBERS.map((m) => (
+            <article key={m.name} className="group">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,hsl(220_18%_8%/0.35),transparent_55%)]" />
+              </div>
 
-        {/* Operations & Advisors — single combined row */}
-        <div
-          className={`grid md:grid-cols-3 gap-6 transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {[...team, ...advisors].map((m) => (
-            <TeamCard key={m.name} member={m} />
+              <div className="mt-6">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-teal font-medium">
+                  {m.role}
+                </p>
+                <h3 className="mt-2 font-serif text-2xl md:text-[28px] leading-tight text-foreground">
+                  {m.name}
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {m.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] uppercase tracking-[0.18em] text-foreground/75 border border-border rounded-full px-2.5 py-1"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
           ))}
-        </div>
-
-        {/* Note */}
-        <div
-          className={`text-center mt-12 transition-all duration-700 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="inline-flex items-center gap-3 text-sm text-gray-500">
-            <span>🇨🇭</span>
-            <span>Swiss-founded. Science-driven. Globally minded.</span>
-          </div>
         </div>
       </div>
     </section>

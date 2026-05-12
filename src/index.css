@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #0a0f1e;
-  --color-dark-light: #111827;
-  --color-dark-card: #151c2f;
-  --color-dark-border: #1e293b;
-  --color-accent: #3b82f6;
-  --color-accent-light: #60a5fa;
-  --color-gold: #f59e0b;
-  --color-gold-light: #fbbf24;
-}
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(220 18% 12%);
+  --color-muted: hsl(30 12% 95%);
+  --color-muted-foreground: hsl(220 8% 42%);
+  --color-secondary: hsl(38 30% 94%);
+  --color-secondary-foreground: hsl(220 18% 12%);
+  --color-charcoal: hsl(220 18% 12%);
+  --color-primary-foreground: hsl(40 30% 96%);
+  --color-border: hsl(30 14% 90%);
+  --color-teal: hsl(178 28% 32%);
+  --color-teal-deep: hsl(178 30% 22%);
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
 }
 
 @layer base {
@@ -22,9 +23,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
   ::selection {
-    background-color: rgba(59, 130, 246, 0.3);
-    color: white;
+    background-color: hsl(178 28% 32% / 0.2);
+    color: hsl(220 18% 12%);
   }
 
   ::-webkit-scrollbar {
@@ -32,15 +41,53 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0f1e;
+    background: hsl(0 0% 100%);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: hsl(30 14% 85%);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: hsl(30 14% 75%);
+  }
+}
+
+@layer components {
+  .container-edge {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-edge {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-edge {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: hsl(178 28% 32%);
+    font-weight: 500;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
   }
 }
