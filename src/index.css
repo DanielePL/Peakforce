@@ -13,6 +13,11 @@
   --color-teal: hsl(178 28% 32%);
   --color-teal-deep: hsl(178 30% 22%);
 
+  /* Prometheus product brand (flame orange) — matches the live Enterprise app.
+     Used only on product surfaces, not the PeakForce corporate brand. */
+  --color-prometheus: hsl(23 87% 55%);
+  --color-prometheus-deep: hsl(16 82% 45%);
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
 }

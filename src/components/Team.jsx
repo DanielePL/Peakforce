@@ -1,45 +1,35 @@
+// Studio credibility strip. Curated for the software-services audience:
+// the builder + tech/business pedigree that signals "trust us with your
+// source code". Sport-science profiles live on the Prometheus product page,
+// where the athletic framing belongs.
 const MEMBERS = [
   {
     name: 'Daniele Pauli',
-    role: 'CEO & Founder',
+    role: 'Founder & Builder',
     image: '/lovable/team-daniele-BLXKUkZa.webp',
-    bio: "IPF World Champion (2018). Former Training Officer, Credit Suisse Health Management. 14,000+ coaching sessions. Developed the world's first 9-axis bar acceleration VBT prototype in 2017.",
-    tags: ['IPF World Champion', 'VBT Pioneer'],
+    bio: "Lead builder. Paired with AI, engineered the entire Prometheus ecosystem — 8 applications, 1.4M lines of production code — in 11 months. IPF World Champion: the same discipline, applied to software.",
+    tags: ['AI-Augmented Build', 'Prometheus Architect'],
   },
   {
-    name: 'Dr. Basil Achermann',
-    role: 'Chief Science Officer',
-    image: '/lovable/team-basil-DdeTDupP.webp',
-    bio: 'PhD Sport Science, University of Zurich. The rare scientist who can both design the experiment and write the code. Leads the Prometheus Lab and drives the R&D pipeline.',
-    tags: ['PhD Sport Science', 'Measurement Methodology'],
-  },
-  {
-    name: 'Sjoerd Joosten',
-    role: 'Chief Operating Officer',
-    image: '/lovable/team-sjoerd-BU1G6MS9.webp',
-    bio: 'Sport psychologist. Extensive experience leading talent sport schools. B2B specialist driving PeakForce into gyms, clinics and enterprises across Europe.',
-    tags: ['Sport Psychology', 'Enterprise Growth'],
+    name: 'Dr. Kevin Uram',
+    role: 'Technical Advisor',
+    image: '/lovable/team-kevin-C0fI8Aqs.webp',
+    bio: 'PhD Physical Chemistry, University of Pittsburgh. Former IBM Senior Technical Staff Member. Managing Director, Lumileds. Holder of multiple US patents.',
+    tags: ['IBM', 'US Patents'],
   },
   {
     name: 'Karin Känel',
-    role: 'Executive Assistant & PM',
+    role: 'Operations & PM',
     image: '/lovable/team-karin-CvIBcsd_.webp',
-    bio: 'Former constructor at Bruker BioSpin — global leader in NMR spectrometers. Certified Technische Kauffrau. Swiss clockwork efficiency.',
+    bio: 'Former constructor at Bruker BioSpin — global leader in NMR spectrometers. Certified Technische Kauffrau. Swiss-precision delivery.',
     tags: ['Bruker BioSpin', 'Precision Engineering'],
   },
   {
     name: 'Sascha Tarone',
-    role: 'Advisor & Early Investor',
+    role: 'Advisor',
     image: '/lovable/team-sascha-9mDApBbm.webp',
-    bio: '20 years in financial analytics. Shapes PeakForce from business model to exit strategy.',
+    bio: 'Two decades in financial analytics. Brings business and financial rigour to every project — viability, pricing and revenue modelling from first scope to launch.',
     tags: ['Financial Analytics', 'Strategic Advisory'],
-  },
-  {
-    name: 'Dr. Kevin Uram',
-    role: 'Early Investor & Technical Advisor',
-    image: '/lovable/team-kevin-C0fI8Aqs.webp',
-    bio: 'PhD Physical Chemistry, University of Pittsburgh. Former IBM Senior Technical Staff Member. Managing Director, Lumileds. Multiple US patents.',
-    tags: ['IBM', 'Lumileds', 'US Patents'],
   },
 ]
 
@@ -48,20 +38,21 @@ export default function Team() {
     <section id="team" data-nav-theme="dark" className="bg-secondary">
       <div className="container-edge pt-16 md:pt-20 pb-28 md:pb-36">
         <div className="max-w-3xl">
-          <p className="eyebrow mb-5">The Studio Behind the Software</p>
+          <p className="eyebrow mb-5">Who You Work With</p>
           <h2
             className="font-serif leading-[1.08] tracking-tight text-foreground text-balance"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}
           >
-            Built by Scientists. <span className="italic">Driven by Athletes.</span>
+            The People Behind the Code.
           </h2>
           <p className="mt-7 text-base md:text-lg text-muted-foreground leading-relaxed">
-            The PeakForce core team — sport science, precision engineering and elite athletic
-            performance under one roof. Swiss-founded. Globally minded.
+            Deep engineering and precision-industry pedigree — paired with an AI-augmented build
+            method that ships at a pace traditional teams can't match. The people you'd hand the
+            keys to.
           </p>
         </div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
           {MEMBERS.map((m) => (
             <article key={m.name} className="group">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">

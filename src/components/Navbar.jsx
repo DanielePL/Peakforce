@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { label: 'Positioning', href: '#positioning' },
-  { label: 'About', href: '#about' },
   { label: 'Platforms', href: '#brands' },
+  { label: 'Prometheus', href: '#/prometheus' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Restoration', href: '#restoration' },
+  { label: 'About', href: '#about' },
   { label: 'Team', href: '#team' },
-  { label: 'Research', href: '#research' },
-  { label: 'Infrastructure', href: '#infrastructure' },
 ]
 
 export default function Navbar() {

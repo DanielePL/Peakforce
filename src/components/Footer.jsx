@@ -1,6 +1,9 @@
 const COMPANY_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Platforms', href: '#brands' },
+  { label: 'Prometheus', href: '#/prometheus' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Restoration', href: '#restoration' },
   { label: 'Research', href: '#research' },
   { label: 'Infrastructure', href: '#infrastructure' },
   { label: 'Team', href: '#team' },
@@ -58,13 +61,13 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-primary-foreground/55">
           <p>© 2026 PeakForce AG. All rights reserved. Made in Switzerland.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary-foreground">
+            <a href="#/privacy" className="hover:text-primary-foreground">
               Privacy
             </a>
-            <a href="#" className="hover:text-primary-foreground">
+            <a href="#/terms" className="hover:text-primary-foreground">
               Terms
             </a>
-            <a href="#" className="hover:text-primary-foreground">
+            <a href="#/impressum" className="hover:text-primary-foreground">
               Impressum
             </a>
           </div>
