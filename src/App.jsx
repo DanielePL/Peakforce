@@ -11,6 +11,7 @@ import Team from './components/Team'
 import PrometheusLab from './components/PrometheusLab'
 import Infrastructure from './components/Infrastructure'
 import Philosophy from './components/Philosophy'
+import WhiteLabel from './components/WhiteLabel'
 import Estimator from './components/Estimator'
 import Engagements from './components/Engagements'
 import Contact from './components/Contact'
@@ -73,6 +74,7 @@ export default function App() {
       />
       <Infrastructure />
       <Philosophy />
+      <WhiteLabel />
       <Estimator />
       <Engagements />
       <Contact />

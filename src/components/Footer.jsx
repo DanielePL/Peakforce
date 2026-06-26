@@ -2,6 +2,7 @@ const COMPANY_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Platforms', href: '#brands' },
   { label: 'Prometheus', href: '#/prometheus' },
+  { label: 'White Label', href: '#white-label' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Restoration', href: '#restoration' },
   { label: 'Research', href: '#research' },

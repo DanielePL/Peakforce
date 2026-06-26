@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react'
 const NAV_ITEMS = [
   { label: 'Platforms', href: '#brands' },
   { label: 'Prometheus', href: '#/prometheus' },
+  { label: 'White Label', href: '#white-label' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Restoration', href: '#restoration' },
   { label: 'About', href: '#about' },
